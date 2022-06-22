@@ -9,9 +9,10 @@ describe ('Protractor baby steps',function(){
            element(by.css(".input-small:nth-child(3)")).sendKeys("6")
             element(by.css('#gobutton')).click()
               //assertion
-           expect( element(by.tagName('h2')).getText()).toBe("10")
+        //    expect( element(by.tagName('h2')).getText()).toBe("10")
         element(by.tagName('h2')).getText().then((text)=>{
             console.log("Result",text);
+            expect(text).toBe('11')
         })
             browser.sleep(1000);
         
@@ -23,9 +24,10 @@ describe ('Protractor baby steps',function(){
         element(by.css(".input-small:nth-child(3)")).sendKeys("6")
          element(by.css('#gobutton')).click()
          //assertion
-         expect( element(by.tagName('h2')).getText()).toBe("-2")
+        //  expect( element(by.tagName('h2')).getText()).toBe("-2")
      element(by.tagName('h2')).getText().then((text)=>{
          console.log("Result",text);
+         expect(text).toBe('-2')
      })
          browser.sleep(2000);
     })
